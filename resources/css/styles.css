@@ -1,0 +1,55 @@
+.container {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card-table {
+    padding: 0;
+    border: black;
+    border-color: lightslategray;
+    border-radius: 5px;
+}
+
+.nav-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Login */
+
+.body-login {
+    width: 100%;
+    background-color:skyblue;
+}
+
+#form-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#card-login {
+    padding: 30px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card label {
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+#div-btn-enter {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-enter {
+    width: 130px;
+    background-color: navy;
+    
+}

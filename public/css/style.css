@@ -1,0 +1,153 @@
+.container-body {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    padding: 1%;
+    background-color: #FFF;
+}
+
+/* NavBar */
+.navbar {
+    background-color: black;
+}
+.navbar a {
+    color: #FFF;
+}
+
+.navbar a:hover {
+    color:lightslategrey;
+    text-decoration: none;
+}
+
+/* navbar itens */
+.nav-item {
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.dropdown-menu {
+    background-color: black;
+}
+
+/* Login */
+
+.body-login {
+    width: 100%;
+    background-color:skyblue;
+    background-image: url('../img/bg-imagem.jpg');
+
+}
+
+.titulo-card {
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+#form-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.card-login {
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    border-radius: 20px;
+
+}
+
+.label-login {
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.card label {
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+#email {
+    width:300px ;
+}
+
+
+#esqueceu-senha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+#lembrar {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#div-btn-enter {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-enter {
+    background-color: navy;
+    color: #FFF;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 90%;
+    margin-top: 5px;
+}
+
+/* Register */
+
+
+
+/* Form Client */
+
+.form-client {
+margin-top: 1%;
+margin-left: 2%;
+margin-right: 2%;
+padding-bottom: 20px;
+
+}
+
+.btn-cad {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+
+/* Rodapé */
+.rodape {
+    background-color: black;
+    margin-top: 25%;
+    height: 80px;
+}
+
+.texto-rodape {
+    color: white;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-size: smaller;
+
+}
+
+.contato-cactus{
+    font-size: 13px;
+    line-height: 1.2;
+}

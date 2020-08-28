@@ -1,0 +1,27 @@
+//Fonecedores
+nome
+cpf
+telefone1
+telefone2
+fatasia
+ramo  *foreign key
+indestadual
+iestadudal
+imunicipal
+email
+logradouro
+numero
+complemento
+bairro
+estado
+municipio
+
+//Ramo
+
+id
+nome
+
+
+
+
+
