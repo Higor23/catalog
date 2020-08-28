@@ -1,18 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Measure;
-
+use App\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MeasureController extends Controller
+class CategoryController extends Controller
 {
 
+    protected $category;
+
+    
     public function index()
     {
-
+        
     }
+
 
     public function create()
     {
@@ -26,30 +30,25 @@ class MeasureController extends Controller
     }
 
 
-    public function show(Measure $measure)
+    public function show(Category $category)
     {
         //
     }
 
 
-    public function edit(Measure $measure)
+    public function edit(Category $category)
     {
         //
     }
 
 
-    public function update(Request $request, Measure $unidadeMedida)
+    public function update(Request $request, Category $category)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\UnidadeMedida  $unidadeMedida
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Measure $measure)
+
+    public function destroy(Category $category)
     {
         //
     }

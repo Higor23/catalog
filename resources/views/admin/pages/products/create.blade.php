@@ -46,12 +46,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="description">Descrição</label>
-            <input type="text" class="form-control" name="description" placeholder="Descreva o produto">
+            <label>Descrição</label>
+            <textarea class="form-control" name="description" placeholder="Descreva o produto"></textarea>
         </div>
 
         <div class="form-group">
-            <label class="text-muted" for="exampleFormControlFile1">Adicionar Imagens</label>
+            <label>Adicionar Imagens</label>
             <input type="file" name="image01" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <div class="form-group">

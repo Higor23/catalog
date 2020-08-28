@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             
             $table->string('name', 100);
             $table->string('description', 255)->nullable();
+            $table->float('price', 10, 2)->nullable();
             $table->mediumText('image01')->nullable();
             $table->mediumText('image02')->nullable();
             $table->mediumText('image03')->nullable();

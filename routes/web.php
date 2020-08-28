@@ -29,6 +29,11 @@ Route::get('product/{url}/show', 'ProductController@show')->name('product.show')
 Route::get('product/{id}/delete', 'ProductController@destroy')->name('product.destroy');
 
 
+/**
+ * Categories
+ */
+Route::resource('categories', 'CategoryController');
+
 
 
 });
