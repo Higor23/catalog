@@ -32,9 +32,24 @@ Route::get('product/{id}/delete', 'ProductController@destroy')->name('product.de
 /**
  * Categories
  */
-Route::resource('categories', 'CategoryController');
+Route::get('categories', 'CategoryController@index')->name('categories.index');
+Route::get('category/create', 'CategoryController@create')->name('category.create');
+Route::post('category/store', 'CategoryController@store')->name('category.store');
+Route::get('category/{url}/edit', 'CategoryController@edit')->name('category.edit');
+Route::put('category/update/{url}', 'CategoryController@update')->name('category.update');
+Route::get('category/{url}/show', 'CategoryController@show')->name('category.show');
+Route::get('category/{id}/delete', 'CategoryController@destroy')->name('category.destroy');
 
-
+/**
+ * Sub-categories
+ */
+Route::get('subcategories', 'SubcategoryController@index')->name('subcategories.index');
+Route::get('subcategory/create', 'SubcategoryController@create')->name('subcategory.create');
+Route::post('subcategory/store', 'SubcategoryController@store')->name('subcategory.store');
+Route::get('subcategory/{url}/edit', 'SubcategoryController@edit')->name('subcategory.edit');
+Route::put('subcategory/update/{url}', 'SubcategoryController@update')->name('subcategory.update');
+Route::get('subcategory/{url}/show', 'SubcategoryController@show')->name('subcategory.show');
+Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('subcategory.destroy');
 
 });
 

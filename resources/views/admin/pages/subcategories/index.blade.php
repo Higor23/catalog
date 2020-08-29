@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Categorias')
+@section('title', 'Subcategorias')
 
 @section('content_header')
 
@@ -8,10 +8,10 @@
 
 @section('content')
 <div class="form-client">
-    <h4 class="h4">Categorias</h4>
+    <h4 class="h4">Subcategorias</h4>
     <div class="btn-cad">
-    <a href="{{ route('category.create') }}">
-            <button type=" button" class="btn btn-success">Nova Categoria</button>
+    <a href="{{ route('subcategory.create') }}">
+            <button type=" button" class="btn btn-success">Nova Subcategoria</button>
         </a>
 
     </div>
@@ -28,21 +28,23 @@
             <tr>
                 <th scope="col" width="100px">Código</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Ações</th>
 
             </tr>
         </thead>
 
         <tbody>
-            @foreach ($categories as $category)
+            @foreach ($subcategories as $subcategory)
 
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
+                    <td>{{ $subcategory->id }}</td>
+                    <td>{{ $subcategory->name }}</td>
+                    <td>{{ $subcategory->category->name }}</td>
             <td>
-                <a class="btn btn-warning" href="{{ route('category.show', [$category->id]) }}">Ver</a>
-                <a class="btn btn-primary" href="{{ route('category.edit', [$category->id]) }}">Editar</a>
-                <a class="btn btn-danger" href="{{ route('category.destroy', [$category->id]) }}">Excluir</a>
+                <a class="btn btn-warning" href="{{ route('subcategory.show', [$subcategory->id]) }}">Ver</a>
+                <a class="btn btn-primary" href="{{ route('subcategory.edit', [$subcategory->id]) }}">Editar</a>
+                <a class="btn btn-danger" href="{{ route('subcategory.destroy', [$subcategory->id]) }}">Excluir</a>
             </td>
 </tr>
 @endforeach

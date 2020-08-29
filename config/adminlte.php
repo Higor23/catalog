@@ -246,15 +246,16 @@ return [
 
         [
             'text'        => 'Categorias',
-            'url'         => 'admin/products',
+            'url'         => 'admin/categories',
             'icon'        => 'fab fa-buffer',
 
         ],
 
         [
             'text'        => 'Sub-categorias',
-            'url'         => 'admin/products',
+            'url'         => 'admin/subcategories',
             'icon'        => 'fab fa-buffer',
+           
 
         ],
 
