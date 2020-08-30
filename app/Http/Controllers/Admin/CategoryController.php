@@ -46,12 +46,16 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $subcategories = $this->subcategory->all();
-        if (!$category = $this->category->find($id)){
-            return redirect()->back();
-        }
+        // $subcategories = $this->subcategory->all();
+        // if (!$category = $this->category->find($id)){
+        //     return redirect()->back();
+        // }
+        $category = $this->category->find($id);
+        $subcategories = $category->subcategories()->get();
 
-        return view('admin.pages.categories.show', ['category' => $category, 'subcategories', $subcategories]);
+        // $subcategories = Subcategory::all();
+
+        return view('admin.pages.categories.show', ['category' => $category, 'subcategories' => $subcategories]);
     }
 
 
