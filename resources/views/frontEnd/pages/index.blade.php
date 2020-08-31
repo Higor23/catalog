@@ -23,7 +23,7 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img src="{{asset('aroma/img/logo.png')}}" alt=""></a>
+          <a class="navbar-brand logo_h"  href="index.html"><img src="{{asset('aroma/img/logo.jpg')}}" width="150px" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -80,15 +80,15 @@
         <div class="row no-gutters align-items-center pt-60px">
           <div class="col-5 d-none d-sm-block">
             <div class="hero-banner__img">
-              <img class="img-fluid" src="{{ asset('aroma/img/home/hero-banner.png') }}" alt="">
+              <img class="img-fluid"  src="{{ asset('aroma/img/home/capa.jpg') }}" alt="">
             </div>
           </div>
           <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
             <div class="hero-banner__content">
-              <h4>Shop is fun</h4>
-              <h1>Browse Our Premium Product</h1>
-              <p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
-              <a class="button button-hero" href="#">Browse Now</a>
+              <h4>Produtos Personalizados</h4>
+              <h2>Com arte</h2>
+              <p>Modelos de acordo à sua preferência</p>
+              <a class="button button-hero" href="#">Visualizar</a>
             </div>
           </div>
         </div>
@@ -100,21 +100,21 @@
     <section class="section-margin mt-0">
       <div class="owl-carousel owl-theme hero-carousel">
         <div class="hero-carousel__slide">
-          <img src="{{ asset('aroma/img/home/hero-slide1.png') }}" alt="" class="img-fluid">
+          <img src="{{ asset('aroma/img/home/personalizados.jpg') }}" alt="" class="img-fluid" width="200px">
           <a href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
-          <img src="{{ asset('aroma/img/home/hero-slide2.png') }}" alt="" class="img-fluid">
+          <img src="{{ asset('aroma/img/home/impressoes.jpg') }}" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
-          <img src="{{ asset('aroma/img/home/hero-slide3.png') }}" alt="" class="img-fluid">
+          <img src="{{ asset('aroma/img/home/aniversario.jpg') }}" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
