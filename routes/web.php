@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::prefix('admin')->namespace('Admin')->group(function () {
 
 
+
 /**
  * Products
  */
@@ -55,13 +56,19 @@ Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('su
 });
 
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('auth.login');
 });
 
 
 /**
- * Autenticação
+ * Front-End 
+ */
+Route::get('/', 'FrontEnd\FrontEndController@index')->name('initial.index');
+
+
+/**
+ * Autentication
  */
 // Auth::routes();
 Route::get('createuser', 'UserController@create')->name('createUser');
