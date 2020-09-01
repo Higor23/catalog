@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +9,22 @@
   <link rel="icon" href="{{ asset('app-assets/img/Fevicon.png')}}" type="image/png">
   <link rel="stylesheet" href="{{ asset('aroma/vendors/bootstrap/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('aroma/vendors/fontawesome/css/all.min.css')}}">
-	<link rel="stylesheet" href="{{ asset('aroma/vendors/themify-icons/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{ asset('aroma/vendors/themify-icons/themify-icons.css')}}">
   <link rel="stylesheet" href="{{ asset('aroma/vendors/nice-select/nice-select.css')}}">
   <link rel="stylesheet" href="{{ asset('aroma/vendors/owl-carousel/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{ asset('aroma/vendors/owl-carousel/owl.carousel.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('aroma/css/style.css')}}" type="text/css">
 </head>
+
 <body>
   <!--================ Start Header Menu Area =================-->
-	<header class="header_area">
+  <header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h"  href="index.html"><img src="{{asset('aroma/img/logo.jpg')}}" width="150px" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand logo_h" href="index.html"><img src="{{asset('aroma/img/logo.jpg')}}" width="150px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -34,8 +33,7 @@
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
               <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Produtos</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
                   <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
@@ -43,18 +41,16 @@
                   <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
                   <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
                 </ul>
-							</li>
+              </li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Quem somos</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quem somos</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                   <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
                 </ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
+              </li>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                   <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
@@ -64,23 +60,23 @@
               <li class="nav-item"><a class="nav-link" href="contact.html">Fale Conosco</a></li>
             </ul>
 
-            
+
           </div>
         </div>
       </nav>
     </div>
   </header>
-	<!--================ End Header Menu Area =================-->
+  <!--================ End Header Menu Area =================-->
 
   <main class="site-main">
-    
+
     <!--================ Hero banner start =================-->
     <section class="hero-banner">
       <div class="container">
         <div class="row no-gutters align-items-center pt-60px">
           <div class="col-5 d-none d-sm-block">
             <div class="hero-banner__img">
-              <img class="img-fluid"  src="{{ asset('aroma/img/home/capa.jpg') }}" alt="">
+              <img class="img-fluid" src="{{ asset('aroma/img/home/capa.jpg') }}" alt="">
             </div>
           </div>
           <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
@@ -124,7 +120,7 @@
     </section>
     <!--================ Hero Carousel end =================-->
 
-    <!-- ================ trending product section start ================= -->  
+    <!-- ================ trending product section start ================= -->
     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
@@ -132,19 +128,21 @@
           <h2>Trending <span class="section-intro__style">Product</span></h2>
         </div>
         <div class="row">
-       
-        <div class="col-md-6 col-lg-4 col-xl-3">
+
+          <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
-            @foreach ($products as $product) 
-            <div class="card-product__img">
-                <img class="card-img" src="{{ url("storage/app/products/{$product->image01}") }}" alt="">
+              @foreach ($products as $product)
+              <div class="card-product__img">
+                @if($product->image01)
+                <img class="card-img" src="{{ asset("storage/app/public/products/{$product->image01}")}}" alt="image">
+                @endif
                 <ul class="card-product__imgOverlay">
                   <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
               </div>
-                
+
               <div class="card-body">
                 <p>{{ $product->category->name }}</p>
                 <h4 class="card-product__title"><a href="single-product.html">{{ $product->name }}</a></h4>
@@ -153,7 +151,7 @@
               @endforeach
             </div>
           </div>
-          
+
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
@@ -253,7 +251,7 @@
                 <p>Accessories</p>
                 <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
                 <p class="card-product__price">$150.00</p>
-              </div> 
+              </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 col-xl-3">
@@ -276,10 +274,10 @@
         </div>
       </div>
     </section>
-    <!-- ================ trending product section end ================= -->  
+    <!-- ================ trending product section end ================= -->
 
 
-    <!-- ================ offer section start ================= --> 
+    <!-- ================ offer section start ================= -->
     <section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
       <div class="container">
         <div class="row">
@@ -294,9 +292,9 @@
         </div>
       </div>
     </section>
-    <!-- ================ offer section end ================= --> 
+    <!-- ================ offer section end ================= -->
 
-    <!-- ================ Best Selling item  carousel ================= --> 
+    <!-- ================ Best Selling item  carousel ================= -->
     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
@@ -434,9 +432,9 @@
         </div>
       </div>
     </section>
-    <!-- ================ Best Selling item  carousel end ================= --> 
+    <!-- ================ Best Selling item  carousel end ================= -->
 
-    <!-- ================ Blog section start ================= -->  
+    <!-- ================ Blog section start ================= -->
     <section class="blog">
       <div class="container">
         <div class="section-intro pb-60px">
@@ -498,9 +496,9 @@
         </div>
       </div>
     </section>
-    <!-- ================ Blog section end ================= -->  
+    <!-- ================ Blog section end ================= -->
 
-    <!-- ================ Subscribe section start ================= --> 
+    <!-- ================ Subscribe section start ================= -->
     <section class="subscribe-position">
       <div class="container">
         <div class="subscribe text-center">
@@ -509,7 +507,7 @@
           <div id="mc_embed_signup">
             <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
               <div class="form-group ml-sm-auto">
-                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
+                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
                 <div class="info"></div>
               </div>
               <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
@@ -519,103 +517,106 @@
 
             </form>
           </div>
-          
+
         </div>
       </div>
     </section>
-    <!-- ================ Subscribe section end ================= --> 
+    <!-- ================ Subscribe section end ================= -->
 
   </main>
 
 
-  <!--================ Start footer Area  =================-->	
-	<footer class="footer">
-		<div class="footer-area">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title large_title">Nossa Missão</h4>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no 
-								divided deep moved us lan Gathering thing us land years living.
-							</p>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
-							</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Links</h4>
-							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Galeria</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="{{ asset('aroma/img/gallery/r1.jpg') }}" alt=""></li>
-								<li><img src="{{ asset('aroma/img/gallery/r2.jpg') }}" alt=""></li>
-								<li><img src="{{ asset('aroma/img/gallery/r3.jpg') }}" alt=""></li>
-								<li><img src="{{ asset('aroma/img/gallery/r5.jpg') }}" alt=""></li>
-								<li><img src="{{ asset('aroma/img/gallery/r7.jpg') }}" alt=""></li>
-								<li><img src="{{ asset('aroma/img/gallery/r8.jpg') }}" alt=""></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Nossos Contatos</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span>
-									Endereço
-								</p>
+  <!--================ Start footer Area  =================-->
+  <footer class="footer">
+    <div class="footer-area">
+      <div class="container">
+        <div class="row section_gap">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-footer-widget tp_widgets">
+              <h4 class="footer_title large_title">Nossa Missão</h4>
+              <p>
+                So seed seed green that winged cattle in. Gathering thing made fly you're no
+                divided deep moved us lan Gathering thing us land years living.
+              </p>
+              <p>
+                So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
+              </p>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget tp_widgets">
+              <h4 class="footer_title">Links</h4>
+              <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Brand</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget instafeed">
+              <h4 class="footer_title">Galeria</h4>
+              <ul class="list instafeed d-flex flex-wrap">
+                <li><img src="{{ asset('aroma/img/gallery/r1.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('aroma/img/gallery/r2.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('aroma/img/gallery/r3.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('aroma/img/gallery/r5.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('aroma/img/gallery/r7.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('aroma/img/gallery/r8.jpg') }}" alt=""></li>
+              </ul>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+            <div class="single-footer-widget tp_widgets">
+              <h4 class="footer_title">Nossos Contatos</h4>
+              <div class="ml-40">
+                <p class="sm-head">
+                  <span class="fa fa-location-arrow"></span>
+                  Endereço
+                </p>
                 <p>Avenida Guanambi, 1790, Bairro Brasil - Vitória da Conquista - BA</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-phone"></span>
-									Telefone - Whatsapp
-								</p>
-								<p>
-									(77)98129-5751 <br>
-								</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span>
-									Email
-								</p>
-								<p>
-									cactusimpressoes@gmail.com <br>
-									www.cactusonline.com.br
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row d-flex">
-					<p class="col-lg-12 footer-text text-center">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Desenvolvido por Cactus | Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Todos os direitos reservados. 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--================ End footer Area  =================-->
+                <p class="sm-head">
+                  <span class="fa fa-phone"></span>
+                  Telefone - Whatsapp
+                </p>
+                <p>
+                  (77)98129-5751 <br>
+                </p>
+
+                <p class="sm-head">
+                  <span class="fa fa-envelope"></span>
+                  Email
+                </p>
+                <p>
+                  cactusimpressoes@gmail.com <br>
+                  www.cactusonline.com.br
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row d-flex">
+          <p class="col-lg-12 footer-text text-center">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Desenvolvido por Cactus | Copyright &copy;<script>
+              document.write(new Date().getFullYear());
+            </script> | Todos os direitos reservados.
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--================ End footer Area  =================-->
 
 
 
@@ -628,4 +629,5 @@
   <script src="{{asset('aroma/vendors/mail-script.js') }}"></script>
   <script src="{{asset('aroma/js/main.js')}}"></script>
 </body>
+
 </html>
