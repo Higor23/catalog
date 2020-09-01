@@ -12,8 +12,28 @@ use Illuminate\Support\Facades\Storage;
 
 class FrontEndController extends Controller
 {
-    public function index(){
-        return view('frontEnd.pages.index');
+    protected $product, $category, $subcategory;
+
+    public function __construct(Product $product, Category $category, Subcategory $subcategory)
+    {
+        $this->product = $product;
+        $this->category = $category;
+        $this->subcategory = $subcategory;
+    }
+
+
+    public function index()
+    {
+
+        $products = $this->product->paginate();
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
+        return view('frontEnd.pages.index', [
+            'products' => $products,
+            'categories' => $categories,
+            'subcategories' => $subcategories
+        ]);
     }
 
 }
