@@ -12,10 +12,12 @@ class Product extends Model
         'name',
         'category_id',
         'subcategory_id',
+        'tag_id',
         'description',
         'image01',
         'image02',
         'image03',
+        
 
     ];
 
@@ -30,5 +32,10 @@ class Product extends Model
         return $this->belongsTo(Subcategory::class);
 
     }
+    
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class);
 
+    }
 }
