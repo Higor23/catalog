@@ -93,27 +93,35 @@
     <!--================ Hero banner start =================-->
 
     <!--================ Hero Carousel start =================-->
+    <br>
+    <br>
+    <div class="section-intro pb-60px">
+    <p>Destaques</p>
+        <h2>Principais <span class="section-intro__style">Categorias</span></h2>
+      </div>
     <section class="section-margin mt-0">
+
       <div class="owl-carousel owl-theme hero-carousel">
+        
         <div class="hero-carousel__slide">
           <img src="{{ asset('aroma/img/home/personalizados.jpg') }}" alt="" class="img-fluid" width="200px">
           <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
-            <p>Accessories Item</p>
+            <h3>Personalizados</h3>
+            <p>Conferir</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
           <img src="{{ asset('aroma/img/home/impressoes.jpg') }}" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
-            <p>Accessories Item</p>
+            <h3>Impressões</h3>
+            <p>Conferir</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
           <img src="{{ asset('aroma/img/home/aniversario.jpg') }}" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
-            <p>Accessories Item</p>
+            <h3>Festas</h3>
+            <p>Conferir</p>
           </a>
         </div>
       </div>
@@ -124,17 +132,18 @@
     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
-          <p>Popular Item in the market</p>
-          <h2>Trending <span class="section-intro__style">Product</span></h2>
+          <p>Novidades</p>
+          <h2>Produtos Mais <span class="section-intro__style">Recentes</span></h2>
         </div>
         <div class="row">
-
+          @foreach ($products as $product)
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
-              @foreach ($products as $product)
+
               <div class="card-product__img">
                 @if($product->image01)
-                <img class="card-img" src="{{ asset("storage/app/public/products/{$product->image01}")}}" alt="image">
+                <!-- <img class="card-img" src="public//public/products/{{$product->image01}})" alt="image"> -->
+                <img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
                 @endif
                 <ul class="card-product__imgOverlay">
                   <li><button><i class="ti-search"></i></button></li>
@@ -148,131 +157,21 @@
                 <h4 class="card-product__title"><a href="single-product.html">{{ $product->name }}</a></h4>
                 <p class="card-product__price">{{ $product->price }}</p>
               </div>
-              @endforeach
-            </div>
-          </div>
 
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product2.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Beauty</p>
-                <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product3.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product4.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product5.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Man Office Bag</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product6.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="single-product.html">Charging Car</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product7.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{ asset('aroma/img/product/product8.png') }}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
+        </div>
+        <div class="card-footer">
+          @if (isset($filters))
+          {!! $products->appends($filters)->links() !!}
+          @else
+          {!! $products->links() !!}
+          @endif
+
         </div>
       </div>
+
     </section>
     <!-- ================ trending product section end ================= -->
 

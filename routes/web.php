@@ -52,8 +52,12 @@ Route::get('subcategory/{url}/edit', 'SubcategoryController@edit')->name('subcat
 Route::put('subcategory/update/{url}', 'SubcategoryController@update')->name('subcategory.update');
 Route::get('subcategory/{url}/show', 'SubcategoryController@show')->name('subcategory.show');
 Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('subcategory.destroy');
-
 });
+
+/**
+ * Filters
+ */
+Route::get('filtercategory', 'FrontEndController@filterCategory')->name('filtercategory.index');
 
 
 Route::get('/admin', function () {

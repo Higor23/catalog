@@ -25,9 +25,22 @@ class FrontEndController extends Controller
     public function index()
     {
 
-        $products = $this->product->paginate();
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
+        $products = $this->product->latest()->paginate(1);
+        $categories = $this->category->all();
+        $subcategories = $this->subcategory->all();
+
+        return view('frontEnd.pages.index', [
+            'products' => $products,
+            'categories' => $categories,
+            'subcategories' => $subcategories
+        ]);
+    }
+
+    public function filterCategory()
+    {
+        $products = $this->product->latest()->paginate(1);
+        $categories = $this->category->where('name', 'Personalizados');
+        $subcategories = $this->subcategory->all();
 
         return view('frontEnd.pages.index', [
             'products' => $products,
