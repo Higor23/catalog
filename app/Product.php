@@ -18,7 +18,6 @@ class Product extends Model
         'image02',
         'image03',
         
-
     ];
 
     public function category()

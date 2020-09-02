@@ -35,7 +35,8 @@
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
-                </div class="form-group">
+                </div>
+                <div class="form-group">
                 <label for=" inputState">Sub-categoria</label>
                 <select id="inputState" class="form-control" name="subcategory_id">
                     <option selected>Selecione</option>
@@ -43,6 +44,16 @@
                     <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                     @endforeach
                 </select>
+                </div>
+                <div class="form-group">
+                <label for=" inputState">Tag</label>
+                <select id="inputState" class="form-control" name="tag_id">
+                    <option selected>Selecione</option>
+                    @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -62,7 +73,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Cadastrar</button>
-        
+
 </div>
 <br>
 </form>

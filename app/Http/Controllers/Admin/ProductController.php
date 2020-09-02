@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Subcategory;
 use App\Product;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,11 +16,15 @@ class ProductController extends Controller
 
     protected $product, $category, $subcategory;
 
-    public function __construct(Product $product, Category $category, Subcategory $subcategory)
+    public function __construct(Product $product, 
+                                Category $category, 
+                                Subcategory $subcategory,
+                                Tag $tag)
     {
         $this->product = $product;
         $this->category = $category;
         $this->subcategory = $subcategory;
+        $this->tag = $tag;
     }
 
 
@@ -27,14 +32,16 @@ class ProductController extends Controller
     {
 
         $products = $this->product->paginate();
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
+        $categories = $this->category->all();
+        $subcategories = $this->subcategory->all();
+        $tags = $this->tag->all();
 
 
         return view('admin.pages.products.index', [
             'products' => $products,
             'categories' => $categories,
-            'subcategories' => $subcategories
+            'subcategories' => $subcategories,
+            'tags' => $tags,
         ]);
     }
 
@@ -43,7 +50,12 @@ class ProductController extends Controller
 
         $categories = Category::all();
         $subcategories = Subcategory::all();
-        return view('admin.pages.products.create', ['categories' => $categories, 'subcategories' => $subcategories]);
+        $tags = $this->tag->all();
+
+        return view('admin.pages.products.create', [
+            'categories' => $categories, 
+            'subcategories' => $subcategories,
+            'tags' => $tags]);
     }
 
     public function store(Request $request)
@@ -100,14 +112,15 @@ class ProductController extends Controller
 
     {
         $product = $this->product->find($id);
-
         $categories = $this->category::all();
         $subcategories = $this->subcategory::all();
+        $tags = $this->tag->all();
 
         return view('admin.pages.products.edit', [
             'product' => $product,
             'subcategories' =>  $subcategories,
-            'categories' =>  $categories
+            'categories' =>  $categories,
+            'tags' => $tags,
         ]);
     }
 
