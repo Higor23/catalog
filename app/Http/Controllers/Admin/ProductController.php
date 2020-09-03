@@ -61,13 +61,16 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'description' => 'required',
-        //     'quantidade' => 'required',
-        //     'preco' => 'required',
-        //     'custo' => 'required',
-        //     'unidadeMedida_id' => 'required',
-        // ]);
+        $messages = [
+            'required' => 'O campo é obrigatório!',
+            'nome.min' => 'É necessário no mínimo 3 caracteres no nome!',
+            'description.min' => 'É necessário no mínimo 5 caracteres no nome!'
+        ];
+    
+        $request->validate([
+            'name' => 'required|min:3|max:255|unique:products',
+            'description' => 'nullable|min:5|max:255',
+        ], $messages);
 
         $data = $request->all();
 
