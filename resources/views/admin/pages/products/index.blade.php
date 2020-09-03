@@ -10,11 +10,9 @@
 <div class="form-client">
     <h4 class="h4">Produtos</h4>
     <div class="btn-cad">
-    <a href="{{ route('product.create') }}">
+        <a href="{{ route('product.create') }}">
             <button type=" button" class="btn btn-success">Novo Produto</button>
         </a>
-
-        <button type="button" class="btn btn-secondary">Imprimir</button>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <form class="form-inline my-2 my-lg-0">
@@ -38,25 +36,19 @@
 
         <tbody>
             @foreach ($products as $product)
-
-                <tr>
-                    <td>{{ $product->id }}</td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->category->name }}</td>
-                    <td>{{ $product->subcategory->name }}</td>
-            <td>
-                <a class="btn btn-warning" href="{{ route('product.show', [$product->id]) }}">Ver</a>
-                <a class="btn btn-primary" href="{{ route('product.edit', [$product->id]) }}">Editar</a>
-                <a class="btn btn-danger" href="{{ route('product.destroy', [$product->id]) }}">Excluir</a>
-            </td>
-</tr>
-@endforeach
+            <tr>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->category->name }}</td>
+                <td>{{ $product->subcategory->name }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{ route('product.show', [$product->id]) }}">Ver</a>
+                    <a class="btn btn-primary" href="{{ route('product.edit', [$product->id]) }}">Editar</a>
+                    <a class="btn btn-danger" href="{{ route('product.destroy', [$product->id]) }}">Excluir</a>
+                </td>
+            </tr>
+            @endforeach
         </tbody>
-       
-
-
     </table>
 </div>
-
-
 @stop

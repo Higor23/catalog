@@ -10,7 +10,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class FrontEndController extends Controller
+class AllProductCOntroller extends Controller
 {
     protected $product, $category, $subcategory;
 
@@ -22,33 +22,22 @@ class FrontEndController extends Controller
     }
 
 
-    public function index()
+    public function allProducts()
     {
 
-        $products = $this->product->latest()->paginate(1);
+        $products = $this->product->latest()->paginate(16);
         $categories = $this->category->all();
         $subcategories = $this->subcategory->all();
 
-        return view('frontEnd.pages.index', [
+        // return view('template.template_base', [
+        //     'products' => $products,
+        //     'categories' => $categories,
+        //     'subcategories' => $subcategories
+        // ]);
+        return view('frontEnd.pages..allproducts', [
             'products' => $products,
             'categories' => $categories,
             'subcategories' => $subcategories
-        ]);
-    }
-
-    public function filterCategory($category_id)
-    {
-        $products = $this->product->latest()->paginate(1);
-        $categories = $this->category->all();
-        $subcategories = $this->subcategory->all();
-
-        $category01 = $products->where('category_id', $category_id);
-
-        return view('frontEnd.pages.filtercategory', [
-            'products' => $products,
-            'categories' => $categories,
-            'subcategories' => $subcategories,
-            'category01' => $category01,
         ]);
     }
 

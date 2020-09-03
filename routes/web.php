@@ -55,9 +55,10 @@ Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('su
 });
 
 /**
- * Filters
+ * Front-End
  */
-Route::get('filtercategory', 'FrontEndController@filterCategory')->name('filtercategory.index');
+Route::get('products/all', 'FrontEnd\AllProductController@allProducts')->name('products.all');
+Route::get('filtercategory/{category_id}', 'FrontEnd\FrontEndController@filterCategory')->name('filtercategory.index');
 
 
 Route::get('/admin', function () {
