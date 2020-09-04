@@ -16,18 +16,16 @@ use Illuminate\Support\Facades\Auth;
 */
 Route::prefix('admin')->namespace('Admin')->group(function () {
 
-
-
 /**
  * Products
  */
-
+Route::get('product/{url}/show', 'ProductController@show')->name('product.show');
 Route::get('products', 'ProductController@index')->name('products.index');
 Route::get('product/create', 'ProductController@create')->name('product.create');
 Route::post('product/store', 'ProductController@store')->name('product.store');
 Route::get('product/{url}/edit', 'ProductController@edit')->name('product.edit');
 Route::put('product/update/{url}', 'ProductController@update')->name('product.update');
-Route::get('product/{url}/show', 'ProductController@show')->name('product.show');
+
 Route::get('product/{id}/delete', 'ProductController@destroy')->name('product.destroy');
 
 
@@ -59,17 +57,15 @@ Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('su
  */
 Route::get('products/all', 'FrontEnd\AllProductController@allProducts')->name('products.all');
 Route::get('filtercategory/{category_id}', 'FrontEnd\FrontEndController@filterCategory')->name('filtercategory.index');
-
-
+Route::get('/', 'FrontEnd\FrontEndController@index')->name('initial.index');
+// Route::get('productDetail/{', 'FrontEnd\AllProductController@allProducts')->name('products.all');
 Route::get('/admin', function () {
     return view('auth.login');
 });
 
 
-/**
- * Front-End 
- */
-Route::get('/', 'FrontEnd\FrontEndController@index')->name('initial.index');
+
+
 
 
 /**

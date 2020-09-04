@@ -10,6 +10,7 @@ use App\Product;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -79,6 +80,7 @@ class ProductController extends Controller
         ], $messages);
 
         $data = $request->all();
+        $data['url'] = Str::kebab($request->name);
 
         if ($request->hasFile('image01') && $request->image01->isValid()) {
             $imagePath = $request->image01->store('/products');
@@ -98,16 +100,23 @@ class ProductController extends Controller
             $data['image03'] = $imagePath;
         }
 
-        $this->product->create($data);
+        // if ($request->hasFile('image01', 'image02', 'image03') && 
+        //     $request->data(['image01', 'image02', 'image03'])->isValid())
+        //     {
+        //         $imagePath = $request->data(['image01', 'image02', 'image03'])->store('/products');  
+                
+        //         $data(['image01', 'image02', 'image03']) = $imagePath;
+        //     }
 
+        $this->product->create($data);
 
         return redirect()->route('products.index');
     }
 
 
-    public function show($id)
+    public function show($url)
     {
-        $product = $this->product->find($id);
+        $product = $this->product->where('url', $url)->first();
 
         if (!$product) {
             return redirect()->back();

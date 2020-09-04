@@ -47,7 +47,7 @@
                 <td></td>
                 @endif
                 <td>
-                    <a class="btn btn-warning" href="{{ route('product.show', [$product->id]) }}">Ver</a>
+                    <a class="btn btn-warning" href="{{ route('product.show', [$product->url]) }}">Ver</a>
                     <a class="btn btn-primary" href="{{ route('product.edit', [$product->id]) }}">Editar</a>
                     <a class="btn btn-danger" href="{{ route('product.destroy', [$product->id]) }}">Excluir</a>
                 </td>

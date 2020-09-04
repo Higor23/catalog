@@ -21,7 +21,8 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('tag_id')->nullable();
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
-            $table->string('name', 100);
+            $table->string('name', 100)->unique();
+            $table->string('url')->unique();
             $table->string('description', 255)->nullable();
             $table->float('price', 10, 2)->nullable();
             $table->mediumText('image01')->nullable();
