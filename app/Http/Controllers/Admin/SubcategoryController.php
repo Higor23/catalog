@@ -39,6 +39,20 @@ class SubcategoryController extends Controller
 
     public function store(Request $request)
     {
+        $messages = [
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo nome.',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+            'category_id.exists' => 'O campo "Categoria" é obrigatório.',
+        ];
+    
+        $request->validate([
+            
+            'name' => 'required|min:3|max:20|unique:subcategories',
+            'category_id' => 'required|exists:categories,id',
+
+        ], $messages);
+        
         $this->subcategory->create($request->all());
 
         return redirect()->route('subcategories.index');
@@ -73,6 +87,20 @@ class SubcategoryController extends Controller
         if (!$subcategory = $this->subcategory->find($id)){
             return redirect()->back();
         }
+
+        $messages = [
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo nome.',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+            'category_id.exists' => 'O campo "Categoria" é obrigatório.',
+        ];
+    
+        $request->validate([
+            
+            'name' => "required|min:3|max:20|unique:subcategories,name,{$id},id",
+            'category_id' => 'required|exists:categories,id',
+
+        ], $messages);
 
         $subcategory->update($request->all());
 

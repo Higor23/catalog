@@ -16,21 +16,30 @@
     <div class="btn-cad">
         <a class="btn btn-primary" href="{{ route('products.index') }}">Voltar</a>
     </div>
-
+    <br>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <!-- Formulário de cadastro de clientes -->
     <form action="{{ route('product.update', [$product->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
             <label>Nome</label>
-            <input type="text" class="form-control" name="name" value="{{ $product->name }}" placeholder="Nome">
+            <input type="text" class="form-control" name="name" value="{{ $product->name ?? old('name') }}" placeholder="Nome">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2"">
                 <label for=" inputState">Categoria</label>
                 <div class="form-group">
-                    <select id="inputState" class="form-control" name="category_id" value="{{ $product->category_id }}">
+                    <select id="inputState" class="form-control" name="category_id" value="{{ $product->category_id ?? old('category_id') }}">
                         <option selected>Selecione</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -38,8 +47,8 @@
                     </select>
                 </div class="form-group">
                 <label for=" inputState">Sub-categoria</label>
-                <select id="inputState" class="form-control" name="subcategory_id" value="{{ $product->subcategory_id }}">
-                    <option selected>Selecione</option>
+                <select id="inputState" class="form-control" name="subcategory_id" value="{{ $product->subcategory_id ?? old('subcategory_id') }}">
+                    <option value="" selected>Selecione</option>
                     @foreach ($subcategories as $subcategory)
                     <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                     @endforeach
@@ -48,7 +57,7 @@
         </div>
         <div class="form-group">
             <label for="description">Descrição</label>
-            <input type="text" class="form-control" name="description" value="{{ $product->description }}" placeholder="Descreva o produto">
+            <input type="text" class="form-control" name="description" value="{{ $product->description ?? old('description') }}" placeholder="Descreva o produto">
         </div>
 
         <div class="form-group">

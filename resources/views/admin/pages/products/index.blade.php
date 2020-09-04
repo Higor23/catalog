@@ -40,7 +40,12 @@
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->category->name }}</td>
+                @if($product->subcategory)
                 <td>{{ $product->subcategory->name }}</td>
+                @endif
+                @if(!$product->subcategory)
+                <td></td>
+                @endif
                 <td>
                     <a class="btn btn-warning" href="{{ route('product.show', [$product->id]) }}">Ver</a>
                     <a class="btn btn-primary" href="{{ route('product.edit', [$product->id]) }}">Editar</a>

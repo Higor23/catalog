@@ -62,13 +62,19 @@ class ProductController extends Controller
     {
 
         $messages = [
-            'required' => 'O campo é obrigatório!',
-            'nome.min' => 'É necessário no mínimo 3 caracteres no nome!',
-            'description.min' => 'É necessário no mínimo 5 caracteres no nome!'
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo "Nome".',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+            'description.min' => 'É necessário no mínimo 5 caracteres no "Nome".',
+            'category_id.exists' => 'O campo "Categoria" é obrigatório.',
         ];
     
         $request->validate([
+            
             'name' => 'required|min:3|max:255|unique:products',
+            'category_id' => 'required|exists:categories,id',
+            'subcategory_id' => 'nullable',
+            'tag_id' => 'nullable',
             'description' => 'nullable|min:5|max:255',
         ], $messages);
 
@@ -131,13 +137,24 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = $this->product->find($id);
-        // $request->validate([
-        //     'descricao' => 'required',
-        //     'quantidade' => 'required',
-        //     'preco' => 'required',
-        //     'custo' => 'required',
-        //     'unidadeMedida_id' => 'required',
-        // ]);
+
+        $messages = [
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo nome.',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+            'description.min' => 'É necessário no mínimo 5 caracteres no nome!',
+            'category_id.exists' => 'O campo "Categoria" é obrigatório.',
+        ];
+    
+        $request->validate([
+            
+            'name' => "required|min:3|max:255|unique:products,name,{$id}',id",
+            'category_id' => 'required|exists:categories,id',
+            'subcategory_id' => 'nullable',
+            'tag_id' => 'nullable',
+            'description' => 'nullable|min:5|max:255',
+        ], $messages);
+
         $data = $request->all();
 
         if ($request->hasFile('image01') && $request->image01->isValid()) {

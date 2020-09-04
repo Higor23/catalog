@@ -24,7 +24,9 @@
             <ul>
                 <li><strong>Nome:</strong> {{ $product->name }} </li>
                 <li><strong>Categoria:</strong> {{ $product->category->name }} </li>
+                @if($product->subcategory)
                 <li><strong>Sub-Categoria:</strong> {{ $product->subcategory->name }} </li>
+                @endif
                 <li><strong>Descrição:</strong> {{ $product->description }} </li>
             </ul>
         </div>

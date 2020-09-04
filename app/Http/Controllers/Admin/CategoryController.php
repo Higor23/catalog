@@ -37,6 +37,19 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
+
+        $messages = [
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo "Nome".',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+        ];
+    
+        $request->validate([
+            
+            'name' => 'required|min:3|max:20|unique:categories',
+
+        ], $messages);
+
         $this->category->create($request->all());
 
         return redirect()->route('categories.index');
@@ -45,14 +58,9 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        // $subcategories = $this->subcategory->all();
-        // if (!$category = $this->category->find($id)){
-        //     return redirect()->back();
-        // }
+
         $category = $this->category->find($id);
         $subcategories = $category->subcategories()->get();
-
-        // $subcategories = Subcategory::all();
 
         return view('admin.pages.categories.show', ['category' => $category, 'subcategories' => $subcategories]);
     }
@@ -73,6 +81,18 @@ class CategoryController extends Controller
         if (!$category = $this->category->find($id)){
             return redirect()->back();
         }
+
+        $messages = [
+            
+            'name.min' => 'É necessário pelo menos 3 caracteres para o campo "Nome".',
+            'name.required' => 'O campo "Nome" é obrigatório.',
+        ];
+    
+        $request->validate([
+            
+            'name' => "required|min:3|max:20|unique:categories,name,{$id}',id",
+
+        ], $messages);
 
         $category->update($request->all());
 

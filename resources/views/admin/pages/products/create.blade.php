@@ -16,18 +16,27 @@
     <div class="btn-cad">
         <a class="btn btn-primary" href="{{ route('products.index') }}">Voltar</a>
     </div>
-
+    <br>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <!-- Formulário de cadastro de clientes -->
     <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label>Nome</label>
+            <label>Nome*</label>
             <input type="text" class="form-control" name="name" placeholder="Nome">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2"">
-                <label for=" inputState">Categoria</label>
+                <label for=" inputState">Categoria*</label>
                 <div class="form-group">
                     <select id="inputState" class="form-control" name="category_id">
                         <option selected>Selecione</option>
@@ -37,22 +46,22 @@
                     </select>
                 </div>
                 <div class="form-group">
-                <label for=" inputState">Sub-categoria</label>
-                <select id="inputState" class="form-control" name="subcategory_id">
-                    <option selected>Selecione</option>
-                    @foreach ($subcategories as $subcategory)
-                    <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
-                    @endforeach
-                </select>
+                    <label for=" inputState">Sub-categoria</label>
+                    <select id="inputState" class="form-control" name="subcategory_id">
+                        <option value="" selected>Selecione</option>
+                        @foreach ($subcategories as $subcategory)
+                        <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
-                <label for=" inputState">Tag</label>
-                <select id="inputState" class="form-control" name="tag_id">
-                    <option selected>Selecione</option>
-                    @foreach ($tags as $tag)
-                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                    @endforeach
-                </select>
+                    <label for=" inputState">Tag</label>
+                    <select id="inputState" class="form-control" name="tag_id">
+                        <option value="" selected>Selecione</option>
+                        @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </div>

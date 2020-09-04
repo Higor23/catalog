@@ -17,7 +17,15 @@
         <a class="btn btn-primary" href="{{ route('subcategories.index') }}">Voltar</a>
     </div>
     <br>
-
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="{{ route('subcategory.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -38,10 +46,10 @@
                 </div>
             </div>
         </div>
-            <button type="submit" class="btn btn-success">Cadastrar</button>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
 
-        </div>
-        <br>
-    </form>
+</div>
+<br>
+</form>
 </div>
 @endsection
