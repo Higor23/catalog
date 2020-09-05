@@ -4,6 +4,7 @@
    
     <!--================ Hero banner start =================-->
     <section class="hero-banner">
+    <div class="container">
         <div class="row no-gutters align-items-center pt-60px">
           <div class="col-5 d-none d-sm-block ">
             <div class="hero-banner__img">
@@ -15,7 +16,7 @@
               <h4>Produtos Personalizados</h4>
               <h2>Com arte</h2>
               <p>Modelos de acordo à sua preferência</p>
-              <a class="button button-hero" href="#">Visualizar</a>
+              <a class="button button-hero" href="{{ route('filtercategory.index', 1) }}">Visualizar</a>
             </div>
           </div>
         </div>
@@ -75,19 +76,13 @@
 
                 <div class="card-product__img">
                   @if($product->image01)
-                  <!-- <img class="card-img" src="public//public/products/{{$product->image01}})" alt="image"> -->
-                  <img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
+                  <a href="{{ route('detail.product', [$product->url , $product->category->id]) }}"><img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
                   @endif
-                  <ul class="card-product__imgOverlay">
-                    <li><button><i class="ti-search"></i></button></li>
-                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                    <li><button><i class="ti-heart"></i></button></li>
-                  </ul>
                 </div>
 
                 <div class="card-body">
                   <p>{{ $product->category->name }}</p>
-                  <h4 class="card-product__title"><a href="single-product.html">{{ $product->name }}</a></h4>
+                  <h4 class="card-product__title"><a href="{{ route('detail.product', [$product->url , $product->category->id]) }}">{{ $product->name }}</a></h4>
                   <p class="card-product__price">{{ $product->price }}</p>
                 </div>
 

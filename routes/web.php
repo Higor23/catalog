@@ -58,7 +58,7 @@ Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('su
 Route::get('products/all', 'FrontEnd\AllProductController@allProducts')->name('products.all');
 Route::get('filtercategory/{category_id}', 'FrontEnd\FrontEndController@filterCategory')->name('filtercategory.index');
 Route::get('/', 'FrontEnd\FrontEndController@index')->name('initial.index');
-// Route::get('productDetail/{', 'FrontEnd\AllProductController@allProducts')->name('products.all');
+Route::get('detailproduct/{url}/{category_id}', 'FrontEnd\DetailProductController@show')->name('detail.product');
 Route::get('/admin', function () {
     return view('auth.login');
 });

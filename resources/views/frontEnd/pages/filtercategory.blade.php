@@ -3,6 +3,32 @@
 @section('content')
 
 <section class="section-margin calc-60px">
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+              <select>
+              <option > <a href="{{ route('products.all') }}">Personalizados</option></a>
+                <option value="1">Default sorting</option>
+                <option value="1">Default sorting</option>
+              </select>
+            </div>
+            <div class="sorting mr-auto">
+              <select>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+              </select>
+            </div>
+            <div>
+              <div class="input-group filter-bar-search">
+                <input type="text" placeholder="Search">
+                <div class="input-group-append">
+                  <button type="button"><i class="ti-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <!-- End Filter Bar -->
         <div class="container">
           <div class="section-intro pb-60px">
             @foreach ($category01 as $product)
@@ -15,15 +41,9 @@
 
                 <div class="card-product__img">
                   @if($product->image01)
-                  <img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
+                  <a href="{{ route('detail.product', [$product->url , $product->category->id]) }}"><img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
                   @endif
-                  <ul class="card-product__imgOverlay">
-                    <li><button><i class="ti-search"></i></button></li>
-                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                    <li><button><i class="ti-heart"></i></button></li>
-                  </ul>
                 </div>
-
                 <div class="card-body">
                   <p>{{ $product->category->name }}</p>
                   <h4 class="card-product__title"><a href="single-product.html">{{ $product->name }}</a></h4>

@@ -14,13 +14,8 @@
 
                 <div class="card-product__img">
                   @if($product->image01)
-                  <img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
+                  <a href="{{ route('detail.product', [$product->url , $product->category->id]) }}"><img class="card-img" src="{{ url("storage/{$product->image01}") }}" alt="image">
                   @endif
-                  <ul class="card-product__imgOverlay">
-                    <li><button><i class="ti-search"></i></button></li>
-                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                    <li><button><i class="ti-heart"></i></button></li>
-                  </ul>
                 </div>
 
                 <div class="card-body">
