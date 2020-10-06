@@ -56,6 +56,7 @@ Route::get('subcategory/{id}/delete', 'SubcategoryController@destroy')->name('su
  * Front-End
  */
 Route::get('products/all', 'FrontEnd\AllProductController@allProducts')->name('products.all');
+Route::any('filtersubcategory/{subcategory_id}/', 'FrontEnd\FrontEndController@filterSubcategory')->name('filtersubcategory.index');
 Route::get('filtercategory/{category_id}', 'FrontEnd\FrontEndController@filterCategory')->name('filtercategory.index');
 Route::get('/', 'FrontEnd\FrontEndController@index')->name('initial.index');
 Route::get('detailproduct/{url}/{category_id}', 'FrontEnd\DetailProductController@show')->name('detail.product');

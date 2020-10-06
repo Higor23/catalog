@@ -6,35 +6,40 @@
   <!-- Start Filter Bar -->
 
   <div class="filter-bar d-flex flex-wrap align-items-center">
-      <div class="sorting">
+
+    <div class="sorting">
       <select onchange="location = this.value;">
-          <option selected>Filtrar por categoria</option>
-          @foreach($categories as $category)  
-          <option value="{{ route('filtercategory.index', [$category->id]) }}">{{ $category->name }}</option>
-          @endforeach
-        </select>
-      </div>
-    </form>
+        <option selected>Filtrar por categoria</option>
+        @foreach($categories as $category)
+        <option value="{{ route('filtersubcategory.index', [$category->id]) }}">{{ $category->name }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="sorting">
+      <select onchange="location = this.value;">
+        <option selected>Filtrar por subcategoria</option>
+        @foreach($subcategoryFilter as $subcategory)
+        <option value="{{ route('filtersubcategory.index', [$subcategory->id]) }}">{{ $subcategory->name }}</option>
+        @endforeach
+      </select>
+    </div>
     <div>
       <div class="input-group filter-bar-search">
         <input type="text" placeholder="Pesquisar">
         <div class="input-group-append">
           <button type="button"><i class="ti-search"></i></button>
-          
         </div>
-      
       </div>
     </div>
   </div>
   <!-- End Filter Bar -->
   <div class="container">
     <div class="section-intro pb-60px">
-      
-      <h2>Produtos da Categoria <span class="section-intro__style" value="{{ $category->id }}">{{ $category->name }}</span></h2>
-   
+      @foreach ($subcategoryFilter as $product)
+      <h2>Produtos da Categoria <span class="section-intro__style">{{ $product->subcategory->name }}</span></h2>
     </div>
     <div class="row">
-    @foreach ($categoryFilter as $product)
+
       <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card text-center card-product">
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aroma Shop - Home</title>
+    <title>Cactus</title>
     <link rel="icon" href="{{ asset('app-assets/img/Fevicon.png')}}" type="image/png">
     <link rel="stylesheet" href="{{ asset('aroma/vendors/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('aroma/vendors/fontawesome/css/all.min.css')}}">
