@@ -80,6 +80,7 @@ class ProductController extends Controller
         ], $messages);
 
         $data = $request->all();
+        dd($data['image01']);
         $data['url'] = Str::kebab($request->name);
 
         if ($request->hasFile('image01') && $request->image01->isValid()) {
